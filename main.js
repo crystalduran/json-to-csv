@@ -1,5 +1,6 @@
 const inputJson = document.getElementById('jsonText');
 const outputCsv = document.getElementById('csvText');
+const errorMessage = document.getElementById('errorText');
 
 inputJson.value = "";
 outputCsv.value = "";
@@ -8,13 +9,14 @@ let csvRows = [];
 function clearTextArea() {
     inputJson.value = "";
     outputCsv.value = "";
+    errorMessage.style.display = "none";
+
 }
 
 function convertJSONtoCSV() {
     const jsonContent = inputJson.value;
     const formattedJSON = jsonContent.replace(/(['"])?([a-zA-Z0-9_]+)(['"])?\s*:/g, '"$2":');
 
-    const errorMessage = document.getElementById('errorText');
     if (errorMessage) {
         errorMessage.textContent = '';
     }
