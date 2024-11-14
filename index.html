@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON to CSV</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>JSON to CSV</h1>
+        <p>Tool designed to simplify the conversion of JSON data to CSV format</p>
+    </header>
+
+    <main>
+        <section class="json-section">
+            <div class="json-header">
+                <h2>JSON</h2>
+                <p id="errorText" style="color: red;"></p>
+            </div>
+            <p>Here is where you paste the JSON data to generate the CSV.</p>
+            <textarea name="json" id="jsonText" rows="20" cols="70"></textarea>
+        </section>
+        <section class="button-section">
+            <button class="button-convert" onclick="convertJSONtoCSV()" id="convertBtn">Convert</button>
+            <button class="button-clear" onclick="clearTextArea()" id="clearBtn">Clear</button>
+            <button class="button-download" onclick="downloadFile()" id="downloadBtn">Download</button>
+        </section>
+        <section class="csv-section">
+            <h2>CSV</h2>
+            <p>This is where the generated CSV data is displayed.</p>
+            <textarea name="csv" id="csvText" rows="20" cols="70"></textarea>
+        </section>
+    </main>
+    <script src="./main.js"></script>
+</body>
+
+</html>
